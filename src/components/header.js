@@ -5,7 +5,7 @@ const Header = () => {
         <div className="header">
         <div className="header__skew"></div>
         <div className="header__border"></div>
-            <p>Fill out the fields below and click the generate button.</p>
+            <h1>Fill out the fields below and click the generate button.</h1>
         </div>
     )
 }
