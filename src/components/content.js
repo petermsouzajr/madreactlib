@@ -6,6 +6,7 @@ class Content extends Component {
     constructor() {
         super()
         this.count = 1;
+        this.child_count = 1;
     }
 
     componentWillReceiveProps() {
@@ -14,8 +15,8 @@ class Content extends Component {
 
     renderLabel(data){
         return [
-            <div className="card__content__label">{this.count++}</div>,
-            <b>{data}</b>
+            <span className="card__content__label" key={this.child_count++}>{this.count++}</span>,
+            <b key={this.child_count++}>{data}</b>
         ]
     }
 
