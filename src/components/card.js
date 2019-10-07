@@ -4,22 +4,22 @@ import Input from './input';
 import Content from './content';
 
 const INITIAL_STATE = {
-    color: '',
-    pluralNoun: '',
-    adjectiveOne: '',
-    celebOne: '',
-    adjectiveTwo: '',
     nounOne: '',
+    verbOne: '',
+    pluralNoun: '',
+    verbTwo: '',
     numberOne: '',
-    numberTwo: '',
     nounTwo: '',
-    adjectiveThree: '',
-    celebTwo: '',
-    celebThree: '',
-    adjectiveFour: '',
     nounThree: '',
-    celebFour: '',
-    adjectiveFive: '',
+    pluralNounTwo: '',
+    pluralAnimal: '',
+    nounFour: '',
+    adjectiveOne: '',
+    popularDance: '',
+    nounFive: '',
+    verbThree: '',
+    adjectiveTwo: '',
+    exclamation: '',
     contentVisible: false        
 }
 
@@ -52,25 +52,25 @@ class Card extends Component {
 
         const inputData = [
 
-            {title: 'Color', state: this.state.color, name: 'color'},
-            {title: 'Plural Noun', state: this.state.pluralNoun, name: 'pluralNoun'},
-            {title: 'Adjective', state: this.state.adjectiveOne, name: 'adjectiveOne'},
-            {title: 'Celebrity', state: this.state.celebOne, name: 'celebOne'},
-
-            {title: 'Adjective', state: this.state.adjectiveTwo, name: 'adjectiveTwo'},
             {title: 'Noun', state: this.state.nounOne, name: 'nounOne'},
+            {title: 'Verb', state: this.state.verbOne, name: 'verbOne'},
+            {title: 'Plural Noun', state: this.state.pluralNoun, name: 'pluralNoun'},
+            {title: 'Verb', state: this.state.verbTwo, name: 'verbTwo'},
+
             {title: 'Number', state: this.state.numberOne, name: 'numberOne'},
-            {title: 'Number', state: this.state.numberTwo, name: 'numberTwo'},
-
             {title: 'Noun', state: this.state.nounTwo, name: 'nounTwo'},
-            {title: 'Adjective', state: this.state.adjectiveThree, name: 'adjectiveThree'},
-            {title: 'Celebrity', state: this.state.celebTwo, name: 'celebTwo'},
-            {title: 'Celebrity', state: this.state.celebThree, name: 'celebThree'},
-
-            {title: 'Adjective', state: this.state.adjectiveFour, name: 'adjectiveFour'},
             {title: 'Noun', state: this.state.nounThree, name: 'nounThree'},
-            {title: 'Celebrity', state: this.state.celebFour, name: 'celebFour'},
-            {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'},
+            {title: 'Plural Noun', state: this.state.pluralNounTwo, name: 'pluralNounTwo'},
+
+            {title: 'Plural Animal', state: this.state.pluralAnimal, name: 'pluralAnimal'},
+            {title: 'Noun', state: this.state.nounFour, name: 'nounFour'},
+            {title: 'Adjective', state: this.state.adjectiveOne, name: 'adjectiveOne'},
+            {title: 'Popular Dance', state: this.state.popularDance, name: 'popularDance'},
+
+            {title: 'Noun', state: this.state.nounFive, name: 'nounFive'},
+            {title: 'Verb', state: this.state.verbThree, name: 'verbThree'},
+            {title: 'Adjective', state: this.state.adjectiveTwo, name: 'adjectiveTwo'},
+            {title: 'Exclamation', state: this.state.exclamation, name: 'exclamation'},
         ]
 
         return (
