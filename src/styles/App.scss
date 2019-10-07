@@ -135,12 +135,12 @@
           height: 24px;
           width: 24px;
           line-height: 24px;
-          background-color: #B3B3B3;
+          background-color: #d2d2d2;
           border-radius: 50%;
           font-size: 14px;
           text-align: center;
           color: white;
-          display: inline-block;
+          display: none;
           margin: 4px;
       }
 
@@ -159,6 +159,11 @@
         padding: 50px 47px;
         font-size: 16px;
         font-weight: 300;
+        :hover {
+            .card__content__label {
+                display: inline-block;
+            }
+        }
     }
   }
 }
