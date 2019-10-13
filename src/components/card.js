@@ -17,8 +17,8 @@ const INITIAL_STATE = {
     adjectiveOne: '',
     popularDance: '',
     nounFive: '',
-    verbThree: '',
     adjectiveTwo: '',
+    adjectiveThree: '',
     exclamation: '',
     contentVisible: false        
 }
@@ -29,14 +29,31 @@ class Card extends Component {
         super()
         this.state = INITIAL_STATE;
 
-
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.classClickChange = this.classClickChange.bind(this);
+        this.blurChange = this.blurChange.bind(this);
+        this.focusChange = this.focusChange.bind(this);
     }
 
     handleInputChange(event) {
         this.setState({ [event.target.name]: event.target.value })
     }
+
+    classClickChange() { 
+        console.log("almost")
+        //document.getElementById(index).className = `input__number ${this.className === 'blue' ? 'gray' : 'blue'}`;
+            }
+
+    blurChange(event) {
+        this.classClickChange()
+        event.target.placeholder = event.target.name
+    }
+                
+    focusChange(event){
+        this.classClickChange()
+        event.target.placeholder = ""
+}
 
     handleFormSubmit(event) {
         event.preventDefault()
@@ -68,8 +85,8 @@ class Card extends Component {
             {title: 'Popular Dance', state: this.state.popularDance, name: 'popularDance'},
 
             {title: 'Noun', state: this.state.nounFive, name: 'nounFive'},
-            {title: 'Verb', state: this.state.verbThree, name: 'verbThree'},
             {title: 'Adjective', state: this.state.adjectiveTwo, name: 'adjectiveTwo'},
+            {title: 'Adjective', state: this.state.adjectiveThree, name: 'adjectiveThree'},
             {title: 'Exclamation', state: this.state.exclamation, name: 'exclamation'},
         ]
 
@@ -78,7 +95,7 @@ class Card extends Component {
                 <div className="card__inputs">
                     {
                         inputData.map((data, index) => { 
-                            return Input( (data), this.handleInputChange, index ) 
+                            return Input( (data), this.handleInputChange, index, this.blurChange, this.focusChange ) 
                         })
                     }
                 </div>

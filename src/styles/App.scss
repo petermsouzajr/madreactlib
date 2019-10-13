@@ -133,16 +133,16 @@
 
       &__label {
           height: 24px;
-          width: 24px;
+          width: 0px;
           line-height: 24px;
           background-color: #B3B3B3;
           border-radius: 50%;
           font-size: 14px;
           text-align: center;
           color: white;
-          display: none;
-          margin: 4px;
-          transition: all .5s ease;
+          display: inline-block;
+          transition: all .5s;
+          padding-right: 0px;
       }
 
       &__images {
@@ -162,7 +162,9 @@
         font-weight: 300;
         :hover {
             .card__content__label {
-                display: inline-block;
+                width: 24px;
+                padding-right: 1px;
+                margin-right: 4px;
             }
         }
     }
@@ -202,7 +204,7 @@
           outline: none;
           border-bottom: 4px solid #24cef8;
       }
-
+      
   }
   &__number {
       grid-column: number-s/number-e;

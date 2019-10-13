@@ -45,8 +45,8 @@ class Content extends Component {
                     <br/>It says here you've been at <b>{this.renderLabel(data.nounTwo)}</b> corp. for 3 years, can I ask why youre looking for a <b>{this.renderLabel(data.nounThree)}</b>? 
                     <br/>You know, <b>{this.renderLabel(data.pluralNounTwo)}</b> like us are a rare breed, real road <b>{this.renderLabel(data.pluralAnimal)}</b>, always grasping at the <b>{this.renderLabel(data.nounFour)}</b>. 
                     <br/>Well, enough of the <b>{this.renderLabel(data.adjectiveOne)}</b> talk, lets get down to the <b>{this.renderLabel(data.popularDance)}</b> and <b>{this.renderLabel(data.nounFive)}</b> of it, shall we? 
-                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.verbThree)}</b> and <b>{this.renderLabel(data.adjectiveTwo)}</b>, that's bold of you, I admire a good <b>{data.adjectiveTwo}</b>, 
-                    <br/>Well, I think i've heard enough. 
+                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.adjectiveTwo)}</b> and <b>{this.renderLabel(data.adjectiveThree)}</b>, that's bold of you, I admire a good <b>{data.adjectiveThree}</b>, 
+                    <br/>Well, I think i've heard all that i need to hear. 
                     <br/><b>{this.renderLabel(data.exclamation)}</b>!
                 </p>
             </div>
