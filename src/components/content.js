@@ -37,9 +37,10 @@ class Content extends Component {
                     <img src={Michael} alt="Michael Scott" />
                 </div>
                 <p>
-                    Good Afternoon, <b>{this.renderLabel(data.nounOne)}</b> <b>{this.renderLabel(data.verbOne)}</b>,  
-                    can I call you <b>{this.renderLabel(data.pluralNoun)}</b>? 
-                    <br/>Great! I call all my friends <b>{data.pluralNoun}</b>.
+                    Good Afternoon, <b>{this.renderLabel(data.nounOne.charAt(0).toUpperCase()+data.nounOne.slice(1).toLowerCase())} </b> 
+                                    <b>{this.renderLabel(data.verbOne.charAt(0).toUpperCase()+data.verbOne.slice(1).toLowerCase())}</b>,  
+                    can I call you <b>{this.renderLabel(data.pluralNoun.charAt(0).toUpperCase()+data.pluralNoun.slice(1).toLowerCase())}</b>? 
+                    <br/>Great! I call all my friends <b>{data.pluralNoun.charAt(0).toUpperCase()+data.pluralNoun.slice(1).toLowerCase()}</b>.
                     <br/>It's nice to finally <b>{this.renderLabel(data.verbTwo)}</b> you, person-o a person-o -
                     inclusivityness is our number <b>{this.renderLabel(data.numberOne)}</b> concern. 
                     <br/>It says here you've been at <b>{this.renderLabel(data.nounTwo)}</b> corp. for 3 years, can I ask why youre looking for a <b>{this.renderLabel(data.nounThree)}</b>? 

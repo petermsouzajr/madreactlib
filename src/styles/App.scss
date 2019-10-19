@@ -17,6 +17,17 @@
   background: #297fcf;
 }
 
+.none {
+    border: none;
+    border-bottom: 1px solid #B3B3B3;
+}
+
+.highlight {
+    border: none;
+    outline: none;
+    border-bottom: 4px solid #24cef8;
+}
+
 .home {
   position: relative;
 
@@ -98,6 +109,7 @@
 
       justify-items: center;
       align-items: center;
+
   }
 
   button:focus {
@@ -192,18 +204,11 @@
   input {
       grid-column: input-s/input-e;
 
-      border: none;
       font-size: 15px;
       text-align: center;
       padding: 4px 0;
-      border-bottom: 1px solid #B3B3B3;
       margin-bottom: 1px;
       transition: all .3s ease;
-
-      &:focus {
-          outline: none;
-          border-bottom: 4px solid #24cef8;
-      }
       
   }
   &__number {
