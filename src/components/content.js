@@ -9,13 +9,12 @@ class Content extends Component {
         this.child_count = 1;
     }
 
-    UNSAFE_componentWillReceiveProps() {
+    componentDidUpdate() {
         this.count = 1;
     }
 
     renderLabel(data){
         return [
-            
             <b 
                 key={this.child_count++}>
                     {data}
@@ -44,9 +43,9 @@ class Content extends Component {
                     <br/>It's nice to finally <b>{this.renderLabel(data.verbTwo)}</b> you, person-o a person-o -
                     inclusivityness is our number <b>{this.renderLabel(data.numberOne)}</b> concern. 
                     <br/>It says here you've been at <b>{this.renderLabel(data.nounTwo)}</b> corp. for 3 years, can I ask why youre looking for a <b>{this.renderLabel(data.nounThree)}</b>? 
-                    <br/>You know, <b>{this.renderLabel(data.pluralNounTwo)}</b> like us are a rare breed, real road <b>{this.renderLabel(data.pluralAnimal)}</b>, always grasping at the <b>{this.renderLabel(data.nounFour)}</b>. 
+                    <br/>You know, <b>{this.renderLabel(data.pluralNounTwo)}</b> like us are a rare breed, real road <b>{this.renderLabel(data.pluralAnimal)}</b>, always grasping at the<b>{this.renderLabel(data.nounFour)}</b>. 
                     <br/>Well, enough of the <b>{this.renderLabel(data.adjectiveOne)}</b> talk, lets get down to the <b>{this.renderLabel(data.foodOne)}</b> and <b>{this.renderLabel(data.foodTwo)}</b> of it, shall we? 
-                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.emotionOne)}</b> and <b>{this.renderLabel(data.colorOne)}</b>, that's bold of you, I admire a good <b>{data.colorOne}</b>, 
+                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.emotionOne)}</b> and <b>{this.renderLabel(data.colorOne)}</b>, that's bold of you, I admire a good <b>{data.colorOne}</b>.
                     <br/>Well, I think i've heard all that i need to hear. 
                     <br/><b>{this.renderLabel(data.exclamation)}</b>!
                 </p>

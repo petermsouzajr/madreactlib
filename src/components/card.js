@@ -21,7 +21,7 @@ const INITIAL_STATE = {
     colorOne: '',
     exclamation: '',
     contentVisible: false,
-    formFilled: false     
+    formFilled: false
 }
 
 class Card extends Component { 
@@ -43,25 +43,17 @@ class Card extends Component {
                 if (count >= 16) { count = 16 }
                 if (document.getElementById('input'+count).value === '' 
                 && (this.state.contentVisible === false || this.state.contentVisible === true)){
-                    //set false
                     this.setState({ formFilled: false })
                     document.getElementById('generateButton').className = 'card__gray'
                     break                            
                 } 
                 else if (document.getElementById('input'+count).value !== ''){ 
-                
-                    //set true
-                    //console.log(this.state.formFilled)
                     this.setState({ formFilled: true })
-                    document.getElementById('generateButton').className = 'card__generate'
-            
-                
+                    document.getElementById('generateButton').className = 'card__generate'                
                 }
             }
         }
     }
-
-    contentLogic() {}
 
     buttonLogic() {
         if (this.state.formFilled === false) {
@@ -76,22 +68,6 @@ class Card extends Component {
         this.setState({ [event.target.name]: event.target.value })
 
         this.formFilled()
-        //this.buttonLogic()
-        // var count = 0;
-        // for (var property in INITIAL_STATE) {
-        //     if (Object.prototype.hasOwnProperty.call(INITIAL_STATE, property)) {
-        //         count++;
-        //             if (document.getElementById('input'+count).value === ''){
-        //                 document.getElementById('generateButton').className = 'card__gray'
-        //                 break                            
-        //             } else
-        //             {
-        //                 document.getElementById('generateButton').className = 'card__generate'
-        //             if (count >= 16) { break
-        //             }
-        //         }
-        //     }
-        // }   
     }
 
     handleFormSubmit(event) {
@@ -104,12 +80,11 @@ class Card extends Component {
         else if (document.getElementById('generateButton').className === 'card__clear') {
             document.getElementById('generateButton').className = 'card_gray'
         }
-        //{`card__${!this.state.contentVisible ? 'generate' : 'clear'}`}
         if(this.state.contentVisible) {
             this.setState(INITIAL_STATE)
 
                 var count = 0;
-            
+                document.getElementById('generateButton').className = 'card__gray'
                 for (var property in INITIAL_STATE) {
                     if (Object.prototype.hasOwnProperty.call(INITIAL_STATE, property)) {
                         count++;
@@ -164,7 +139,8 @@ class Card extends Component {
                 </div>
                 <button id='generateButton' className='card__gray' type="submit">{!this.state.contentVisible ? 'Generate' : 'Clear Form'}</button>
                 {
-                    this.state.contentVisible ? <Content data={this.state}/> : ''
+                    this.state.contentVisible ? <Content data={this.state}/> : 
+                    <div id='cta'>Fill out the fields above.</div>
                 }
             </form>
         )

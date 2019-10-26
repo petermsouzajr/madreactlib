@@ -77,9 +77,7 @@
 }
 
 .card {
-  //min-height: 736px;
-  //max-height: 994px;
-  height: 600px;
+  height: 650px;
   width: 1240px;
   padding-bottom: 700px;
   margin: auto;
@@ -99,8 +97,8 @@
       margin-top: 66px;
       margin-left: 83px;
       margin-right: 83px;
+      margin-bottom: 50px;
       height: 500px;
-      //max-height: 550px;
 
       justify-items: center;
       align-items: center;
@@ -117,22 +115,19 @@
 
   &__gray {
     background-color: #B3B3B3;
-    transform: translateY(-300px);
-    margin-top: 220px;
+
     @include button;
 }
 
   &__generate {
       background-color: #297fcf;
-      //transform: translateY(-300px);
-      //margin-top: 220px;
+
       @include button;
 
   }
   &__clear {
-      //transform: translateY(-50%);
       background-color: #45B0E5;
-      //margin-top: 100px;
+
       @include button;
   }
 
@@ -184,6 +179,16 @@
         }
     }
   }
+}
+
+#cta {
+    margin: auto;
+    margin-top: 25%;
+
+    font-family: monospace;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
 }
 
 .input {
