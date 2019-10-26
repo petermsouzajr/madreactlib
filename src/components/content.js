@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import David from '../images/david.png';
 import Michael from '../images/michael.png';
 class Content extends Component {
-
+  
     constructor() {
         super()
         this.count = 1;
@@ -16,15 +16,15 @@ class Content extends Component {
     renderLabel(data){
         return [
             
+            <b 
+                key={this.child_count++}>
+                    {data}
+            </b>,
             <span 
                 className="card__content__label" 
                 key={this.child_count++}>
                     {this.count++}
-            </span>,
-            <b 
-                key={this.child_count++}>
-                    {data}
-            </b>
+            </span>
         ]
     }
 
@@ -45,8 +45,8 @@ class Content extends Component {
                     inclusivityness is our number <b>{this.renderLabel(data.numberOne)}</b> concern. 
                     <br/>It says here you've been at <b>{this.renderLabel(data.nounTwo)}</b> corp. for 3 years, can I ask why youre looking for a <b>{this.renderLabel(data.nounThree)}</b>? 
                     <br/>You know, <b>{this.renderLabel(data.pluralNounTwo)}</b> like us are a rare breed, real road <b>{this.renderLabel(data.pluralAnimal)}</b>, always grasping at the <b>{this.renderLabel(data.nounFour)}</b>. 
-                    <br/>Well, enough of the <b>{this.renderLabel(data.adjectiveOne)}</b> talk, lets get down to the <b>{this.renderLabel(data.popularDance)}</b> and <b>{this.renderLabel(data.nounFive)}</b> of it, shall we? 
-                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.adjectiveTwo)}</b> and <b>{this.renderLabel(data.adjectiveThree)}</b>, that's bold of you, I admire a good <b>{data.adjectiveThree}</b>, 
+                    <br/>Well, enough of the <b>{this.renderLabel(data.adjectiveOne)}</b> talk, lets get down to the <b>{this.renderLabel(data.foodOne)}</b> and <b>{this.renderLabel(data.foodTwo)}</b> of it, shall we? 
+                    <br/>Under strengths, you've listed: <b>{this.renderLabel(data.emotionOne)}</b> and <b>{this.renderLabel(data.colorOne)}</b>, that's bold of you, I admire a good <b>{data.colorOne}</b>, 
                     <br/>Well, I think i've heard all that i need to hear. 
                     <br/><b>{this.renderLabel(data.exclamation)}</b>!
                 </p>

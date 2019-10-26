@@ -15,12 +15,13 @@ const INITIAL_STATE = {
     pluralAnimal: '',
     nounFour: '',
     adjectiveOne: '',
-    popularDance: '',
-    nounFive: '',
-    adjectiveTwo: '',
-    adjectiveThree: '',
+    foodOne: '',
+    foodTwo: '',
+    emotionOne: '',
+    colorOne: '',
     exclamation: '',
-    contentVisible: false        
+    contentVisible: false,
+    formFilled: false     
 }
 
 class Card extends Component { 
@@ -28,20 +29,99 @@ class Card extends Component {
     constructor() {
         super()
         this.state = INITIAL_STATE;
-
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.buttonLogic = this.buttonLogic.bind(this);
+        this.formFilled = this.formFilled.bind(this);
+    }
+
+    formFilled() {
+        let count = 0;
+        for (var property in INITIAL_STATE) {
+            if (Object.prototype.hasOwnProperty.call(INITIAL_STATE, property)) {
+                count++;
+                if (count >= 16) { count = 16 }
+                if (document.getElementById('input'+count).value === '' 
+                && (this.state.contentVisible === false || this.state.contentVisible === true)){
+                    //set false
+                    this.setState({ formFilled: false })
+                    document.getElementById('generateButton').className = 'card__gray'
+                    break                            
+                } 
+                else if (document.getElementById('input'+count).value !== ''){ 
+                
+                    //set true
+                    //console.log(this.state.formFilled)
+                    this.setState({ formFilled: true })
+                    document.getElementById('generateButton').className = 'card__generate'
+            
+                
+                }
+            }
+        }
+    }
+
+    contentLogic() {}
+
+    buttonLogic() {
+        if (this.state.formFilled === false) {
+            document.getElementById('generateButton').className = 'card__gray'
+        } else if (this.state.formFilled === true) {
+            document.getElementById('generateButton').className = 'card__generate'
+        }
     }
 
     handleInputChange(event) {
+
         this.setState({ [event.target.name]: event.target.value })
+
+        this.formFilled()
+        //this.buttonLogic()
+        // var count = 0;
+        // for (var property in INITIAL_STATE) {
+        //     if (Object.prototype.hasOwnProperty.call(INITIAL_STATE, property)) {
+        //         count++;
+        //             if (document.getElementById('input'+count).value === ''){
+        //                 document.getElementById('generateButton').className = 'card__gray'
+        //                 break                            
+        //             } else
+        //             {
+        //                 document.getElementById('generateButton').className = 'card__generate'
+        //             if (count >= 16) { break
+        //             }
+        //         }
+        //     }
+        // }   
     }
 
     handleFormSubmit(event) {
         event.preventDefault()
 
+        if (document.getElementById('generateButton').className === 'card_generate'
+        && this.state.formFilleds) {
+            document.getElementById('generateButton').className = 'card__clear'}
+        
+        else if (document.getElementById('generateButton').className === 'card__clear') {
+            document.getElementById('generateButton').className = 'card_gray'
+        }
+        //{`card__${!this.state.contentVisible ? 'generate' : 'clear'}`}
         if(this.state.contentVisible) {
             this.setState(INITIAL_STATE)
+
+                var count = 0;
+            
+                for (var property in INITIAL_STATE) {
+                    if (Object.prototype.hasOwnProperty.call(INITIAL_STATE, property)) {
+                        count++;
+                        
+                        document.getElementById('label'+count).className = 'input__number gray';
+                        document.getElementById('input'+count).className = 'none';
+                        if (count >= 16) { break
+                    }
+                    }
+                }            
+    
+
         } else {
             this.setState({ contentVisible: true })
         }
@@ -64,11 +144,11 @@ class Card extends Component {
             {title: 'Plural Animal', state: this.state.pluralAnimal, name: 'pluralAnimal'},
             {title: 'Noun', state: this.state.nounFour, name: 'nounFour'},
             {title: 'Adjective', state: this.state.adjectiveOne, name: 'adjectiveOne'},
-            {title: 'Popular Dance', state: this.state.popularDance, name: 'popularDance'},
+            {title: 'Food', state: this.state.foodOne, name: 'foodOne'},
 
-            {title: 'Noun', state: this.state.nounFive, name: 'nounFive'},
-            {title: 'Adjective', state: this.state.adjectiveTwo, name: 'adjectiveTwo'},
-            {title: 'Adjective', state: this.state.adjectiveThree, name: 'adjectiveThree'},
+            {title: 'Food', state: this.state.foodTwo, name: 'foodTwo'},
+            {title: 'Emotion', state: this.state.emotionOne, name: 'emotionOne'},
+            {title: 'Color', state: this.state.colorOne, name: 'colorOne'},
             {title: 'Exclamation', state: this.state.exclamation, name: 'exclamation'},
         ]
 
@@ -81,7 +161,7 @@ class Card extends Component {
                         })
                     }
                 </div>
-                <button className={`card__${!this.state.contentVisible ? 'generate' : 'clear'}`} type="submit">{!this.state.contentVisible ? 'Generate' : 'Clear Form'}</button>
+                <button id='generateButton' className='card__gray' type="submit">{!this.state.contentVisible ? 'Generate' : 'Clear Form'}</button>
                 {
                     this.state.contentVisible ? <Content data={this.state}/> : ''
                 }
