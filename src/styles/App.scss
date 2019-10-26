@@ -38,6 +38,12 @@
   grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px, 994px) [card-e];
 }
 
+@media screen and (max-width: 500px) {
+    .header {
+        display: none;
+    }
+}
+
 .header {
   color: white;
   font-family: monospace;
