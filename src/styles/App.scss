@@ -115,6 +115,13 @@
       justify-self: center;
   }
 
+  &__gray {
+    background-color: #B3B3B3;
+    transform: translateY(-300px);
+    margin-top: 220px;
+    @include button;
+}
+
   &__generate {
       background-color: #297fcf;
       //transform: translateY(-300px);
